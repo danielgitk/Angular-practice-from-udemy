@@ -1,0 +1,16 @@
+<mat-toolbar color="accent"><span>
+  <a routerLink="/">Posting app
+  </a>
+</span>
+<span class="spacer"> </span>
+<ul>
+  <li *ngIf="userAuthenticated"> 
+  <a mat-button routerLink="/create" routerLinkActive="mat-light"> New Post</a></li>
+  <li *ngIf="!userAuthenticated">
+    <a mat-button routerLink="/login" routerLinkActive="mat-light"> login</a></li>
+    <li *ngIf="!userAuthenticated">
+      <a mat-button routerLink="/signup" routerLinkActive="mat-light"> signup</a></li>
+      <li *ngIf="userAuthenticated" >
+        <button mat-button (click)="onLogout()"> logout </button></li>
+</ul>
+ </mat-toolbar>
